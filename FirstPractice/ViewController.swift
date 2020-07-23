@@ -16,9 +16,13 @@ struct Country: Codable {
 }
 
 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableViewMain: UITableView!
+    
+   
+    
     var countries: [Country] = []
     
     override func viewDidLoad() {

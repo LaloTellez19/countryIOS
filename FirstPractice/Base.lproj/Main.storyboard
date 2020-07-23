@@ -29,7 +29,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lbK-JO-NLc"/>
+                    <navigationItem key="navigationItem" id="lbK-JO-NLc">
+                        <barButtonItem key="backBarButtonItem" title=" " id="4NM-vB-Fr0"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableViewMain" destination="fob-dA-1at" id="MXt-Af-JYK"/>
                         <segue destination="QGo-Ob-MHG" kind="push" identifier="change_screen" id="fNP-qN-A1w"/>
@@ -39,18 +41,14 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Country View Controller-->
         <scene sceneID="qRj-vl-5sq">
             <objects>
-                <viewController id="QGo-Ob-MHG" sceneMemberID="viewController">
+                <viewController id="QGo-Ob-MHG" customClass="CountryViewController" customModule="FirstPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xUj-r3-svw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zFJ-wJ-JiM">
-                                <rect key="frame" x="20" y="133" width="374" height="152"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USj-AT-hhG">
                                 <rect key="frame" x="20" y="380" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -69,6 +67,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zFJ-wJ-JiM">
+                                <rect key="frame" x="20" y="133" width="374" height="152"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -90,6 +92,13 @@
                         <viewLayoutGuide key="safeArea" id="vrG-fa-hqL"/>
                     </view>
                     <navigationItem key="navigationItem" id="MZM-lF-mo5"/>
+                    <connections>
+                        <outlet property="ImageView" destination="zFJ-wJ-JiM" id="p4g-m2-xJx"/>
+                        <outlet property="capitalLabel" destination="hA8-Sd-Fm2" id="swn-ev-6p7"/>
+                        <outlet property="codeLabel" destination="3Jv-Yk-1gs" id="IEx-D3-34R"/>
+                        <outlet property="imageView" destination="zFJ-wJ-JiM" id="W6D-gA-med"/>
+                        <outlet property="nameLabel" destination="USj-AT-hhG" id="OI7-AP-z3i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2O-KH-NH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
