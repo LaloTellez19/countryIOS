@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 //Implemenat metodo deleate para hacer click
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("La celda #\(indexPath.row) fue seleccionada")
+        performSegue(withIdentifier: "change_screen", sender: nil)
        }
 }
 

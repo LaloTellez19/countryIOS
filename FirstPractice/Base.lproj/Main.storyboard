@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--change_screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FirstPractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="change_screen" id="BYZ-38-t0r" customClass="ViewController" customModule="FirstPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,11 +31,27 @@
                     </view>
                     <connections>
                         <outlet property="tableViewMain" destination="fob-dA-1at" id="MXt-Af-JYK"/>
+                        <segue destination="QGo-Ob-MHG" kind="presentation" destinationCreationSelector="change_screen" modalPresentationStyle="fullScreen" id="Car-B9-kf4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qRj-vl-5sq">
+            <objects>
+                <viewController id="QGo-Ob-MHG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qwp-j0-VJH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SMc-15-fnD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2O-KH-NH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013" y="139"/>
         </scene>
     </scenes>
 </document>
