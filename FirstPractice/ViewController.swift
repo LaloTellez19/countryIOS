@@ -26,7 +26,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableViewMain.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "CountryCell")
         tableViewMain.delegate = self
-        fetchService()
+        tableViewMain.dataSource = self
+        fetchService { [weak self] (countries) in
+            self?.countries = countries
+            DispatchQueue.main.async {
+                self?.tableViewMain.reloadData()
+            }
+        }
     }
 }
 
@@ -73,8 +79,7 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 //4.- Transformar respuesta a diccionario
 //5.- Ejecutar request
 //Help
-private func fetchService()
-{
+private func fetchService(completion: @escaping (_ countries: [Country]) -> Void) {
     //paso 2
     let endpointString = "https://restcountries.eu/rest/v2/region/americas"
     guard let endpoint = URL(string: endpointString) else {
@@ -82,29 +87,19 @@ private func fetchService()
     }
     
     //paso 3
-           URLSession.shared.dataTask(with: endpoint)
-           { (data: Data?, _, error: Error?) in
-               
-               if error != nil{
-                   print("hubo un error")
-                   return
-               }
-               //paso 4
-               guard
-                   let dataFromServices = data,
-                   let model: Country = try?
-                        JSONDecoder().decode(Country.self,
-                        from: dataFromServices)else{
-                            return
-               }
-            DispatchQueue.main.async {
-                
-            }
-            
-            
-           }.resume()
-    
-    
+    URLSession.shared.dataTask(with: endpoint) { (data: Data?, _, error: Error?) in
+       if let error = error {
+        print("hubo un error: \(error.localizedDescription)")
+           return
+       }
+       //paso 4
+       guard let dataFromServices = data,
+           let response: [Country] = try? JSONDecoder().decode([Country].self, from: dataFromServices) else {
+            completion([])
+            return
+       }
+    completion(response)
+    }.resume()
 }
 
 
