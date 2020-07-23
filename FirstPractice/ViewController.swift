@@ -24,9 +24,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //metodos obligados
         tableViewMain.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "CountryCell")
         tableViewMain.delegate = self
         tableViewMain.dataSource = self
+        //llamado a metodo
         fetchService { [weak self] (countries) in
             self?.countries = countries
             DispatchQueue.main.async {
