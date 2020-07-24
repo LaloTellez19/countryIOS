@@ -93,10 +93,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="MZM-lF-mo5"/>
                     <connections>
-                        <outlet property="ImageView" destination="zFJ-wJ-JiM" id="p4g-m2-xJx"/>
                         <outlet property="capitalLabel" destination="hA8-Sd-Fm2" id="swn-ev-6p7"/>
                         <outlet property="codeLabel" destination="3Jv-Yk-1gs" id="IEx-D3-34R"/>
-                        <outlet property="imageView" destination="zFJ-wJ-JiM" id="W6D-gA-med"/>
+                        <outlet property="flagCountryImage" destination="zFJ-wJ-JiM" id="jyr-fj-FTu"/>
                         <outlet property="nameLabel" destination="USj-AT-hhG" id="OI7-AP-z3i"/>
                     </connections>
                 </viewController>

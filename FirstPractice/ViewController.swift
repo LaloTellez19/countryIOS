@@ -47,9 +47,11 @@ class ViewController: UIViewController {
 //Implemenat metodo deleate para hacer click
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "change_screen", sender: nil)
+        performSegue(withIdentifier: "change_screen", sender: self.countries[indexPath.row])
+        
        }
 }
+
 
 extension ViewController: UITableViewDataSource {
 // 1. Número de filas que tendrá nuestra tabla
@@ -66,7 +68,7 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
         if let newCell = cell as? CountryCell {
             DispatchQueue.main.async {
                 let country = self.countries[indexPath.row]
-                newCell.setupCell(name: country.name, capital: country.capital, code: country.alpha2Code)
+                newCell.setupCell(name: country.name, capital: country.capital, code: country.alpha2Code, flag: country.flag)
             }
             
             

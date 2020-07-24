@@ -16,9 +16,13 @@
 		D06E4E4124C9DB9B0059F6E2 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E4E3F24C9DB9B0059F6E2 /* CountryCell.swift */; };
 		D06E4E4224C9DB9B0059F6E2 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D06E4E4024C9DB9B0059F6E2 /* CountryCell.xib */; };
 		D06E4E4624CA46910059F6E2 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E4E4524CA46910059F6E2 /* CountryViewController.swift */; };
+		DC37E508F5BC9292F4E7E24D /* Pods_FirstPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5EFA45B75C0A33D8598FCD /* Pods_FirstPractice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79743574F1E4DAAC7982AA59 /* Pods-FirstPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstPractice.debug.xcconfig"; path = "Target Support Files/Pods-FirstPractice/Pods-FirstPractice.debug.xcconfig"; sourceTree = "<group>"; };
+		AB5EFA45B75C0A33D8598FCD /* Pods_FirstPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D03F9AF7ED4182B683201E27 /* Pods-FirstPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstPractice.release.xcconfig"; path = "Target Support Files/Pods-FirstPractice/Pods-FirstPractice.release.xcconfig"; sourceTree = "<group>"; };
 		D06E4E2524C9D8CF0059F6E2 /* FirstPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06E4E2824C9D8CF0059F6E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D06E4E2A24C9D8CF0059F6E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC37E508F5BC9292F4E7E24D /* Pods_FirstPractice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05B8C342FF2B43D042A2E651 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB5EFA45B75C0A33D8598FCD /* Pods_FirstPractice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62D36F723079406468559B4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79743574F1E4DAAC7982AA59 /* Pods-FirstPractice.debug.xcconfig */,
+				D03F9AF7ED4182B683201E27 /* Pods-FirstPractice.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D06E4E1C24C9D8CF0059F6E2 = {
 			isa = PBXGroup;
 			children = (
 				D06E4E2724C9D8CF0059F6E2 /* FirstPractice */,
 				D06E4E2624C9D8CF0059F6E2 /* Products */,
+				62D36F723079406468559B4A /* Pods */,
+				05B8C342FF2B43D042A2E651 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D06E4E3924C9D8D70059F6E2 /* Build configuration list for PBXNativeTarget "FirstPractice" */;
 			buildPhases = (
+				D09555C2ABC3D0BC7FCDE707 /* [CP] Check Pods Manifest.lock */,
 				D06E4E2124C9D8CF0059F6E2 /* Sources */,
 				D06E4E2224C9D8CF0059F6E2 /* Frameworks */,
 				D06E4E2324C9D8CF0059F6E2 /* Resources */,
+				48BAF39034DC8BE8C1EA126F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,6 +177,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		48BAF39034DC8BE8C1EA126F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirstPractice/Pods-FirstPractice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirstPractice/Pods-FirstPractice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirstPractice/Pods-FirstPractice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D09555C2ABC3D0BC7FCDE707 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirstPractice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D06E4E2124C9D8CF0059F6E2 /* Sources */ = {
@@ -302,6 +371,7 @@
 		};
 		D06E4E3A24C9D8D70059F6E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79743574F1E4DAAC7982AA59 /* Pods-FirstPractice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -320,6 +390,7 @@
 		};
 		D06E4E3B24C9D8D70059F6E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03F9AF7ED4182B683201E27 /* Pods-FirstPractice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

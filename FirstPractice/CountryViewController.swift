@@ -9,17 +9,17 @@
 import UIKit
 
 class CountryViewController: UIViewController {
-
-    @IBOutlet weak var CountryImageView: UIImageView!
     
+    @IBOutlet weak var flagCountryImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet weak var codeLabel: UILabel!
     
+    var countries: [Country] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
