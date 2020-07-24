@@ -7,13 +7,19 @@
 //
 
 import UIKit
-
+import SDWebImage
 class CountryViewController: UIViewController {
+    
     
     @IBOutlet weak var flagCountryImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet weak var codeLabel: UILabel!
+    
+    var nameSelectec = ""
+    var capitalSelectec = ""
+    var codeSelectec = ""
+    var flagSelectec = ""
     
     var countries: [Country] = []
     
@@ -21,6 +27,11 @@ class CountryViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        nameLabel.text = nameSelectec
+        capitalLabel.text = capitalSelectec
+        codeLabel.text = codeSelectec
+        flagCountryImage.sd_setImage(with: URL(string: flagSelectec))
+        
     }
     
 

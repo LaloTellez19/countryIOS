@@ -14,7 +14,10 @@ struct Country: Codable {
       let capital: String
       let flag: String
 }
-
+var nameSelectec = ""
+var capitalSelectec = ""
+var codeSelectec = ""
+var flagSelect = "https://scoopak.com/wp-content/uploads/2013/06/free-hd-natural-wallpapers-download-for-pc.jpg"
 
 
 class ViewController: UIViewController {
@@ -40,15 +43,30 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "change_screen"{
+            let segundVista = segue.destination as! CountryViewController
+            segundVista.nameSelectec = nameSelectec
+            segundVista.capitalSelectec = capitalSelectec
+            segundVista.codeSelectec = codeSelectec
+            segundVista.flagSelectec = flagSelect
+        }
+    }
 }
+
+
 
 
 //Metodos para implementar tables y sus clicks
 //Implemenat metodo deleate para hacer click
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "change_screen", sender: self.countries[indexPath.row])
-        
+        nameSelectec = countries[indexPath.row].name
+        capitalSelectec = countries[indexPath.row].capital
+        codeSelectec = countries[indexPath.row].alpha2Code
+         performSegue(withIdentifier: "change_screen", sender: nil)
        }
 }
 
@@ -68,7 +86,7 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
         if let newCell = cell as? CountryCell {
             DispatchQueue.main.async {
                 let country = self.countries[indexPath.row]
-                newCell.setupCell(name: country.name, capital: country.capital, code: country.alpha2Code, flag: country.flag)
+                newCell.setupCell(name: country.name, capital: country.capital, code: country.alpha2Code, flag: flagSelect)
             }
             
             
@@ -79,14 +97,8 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
     }
 }
 
-//Pasos para consumir servicios web
-//EndPoint: https://restcountries.eu/rest/v2/region/americas
-//1.- Crear exception de seeguridad -> Cambiar info.plist
-//2.- Crear URL con el endpoint
-//3.- Hacer request con la ayuda de URLSesion
-//4.- Transformar respuesta a diccionario
-//5.- Ejecutar request
-//Help
+//Consumo de servicios
+
 private func fetchService(completion: @escaping (_ countries: [Country]) -> Void) {
     //paso 2
     let endpointString = "https://restcountries.eu/rest/v2/region/americas"
@@ -109,5 +121,3 @@ private func fetchService(completion: @escaping (_ countries: [Country]) -> Void
     completion(response)
     }.resume()
 }
-
-

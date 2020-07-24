@@ -17,8 +17,7 @@ class CountryCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        flagImageView.clipsToBounds = true
-        flagImageView.layer.cornerRadius = flagImageView.frame.width / 2
+        flagImageView.layer.cornerRadius = flagImageView.bounds.size.width / 2.0
     }
     
     func setupCell(name: String, capital: String, code: String,flag: String)
@@ -26,6 +25,6 @@ class CountryCell: UITableViewCell {
         nameLabel.text = name
         capitalLabel.text = capital
         codeLabel.text = code
-        flagImageView.sd_setImage(with: URL(string: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg?w968h681"))
+        flagImageView.sd_setImage(with: URL(string: flag))
     }
 }
