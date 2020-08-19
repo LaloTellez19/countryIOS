@@ -23,7 +23,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wdf-fT-nGK">
                                 <rect key="frame" x="50" y="241" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adh-s4-lTs">
                                 <rect key="frame" x="50" y="344" width="314" height="40"/>
@@ -64,6 +64,7 @@
         <!--Navigation Controller-->
         <scene sceneID="PaI-dp-cLC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tUp-39-kgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QWY-wm-Og3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Guu-iB-XXa">
@@ -75,7 +76,6 @@
                         <segue destination="KlG-tL-hdz" kind="relationship" relationship="rootViewController" id="CEH-dG-3gD"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tUp-39-kgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="135.9375"/>
         </scene>

@@ -25,17 +25,16 @@ class coreDataManager{
                 return
             }
             print("conexion exitosa")
-            
         }
     }
     
     func createUsers(usuario: String, contraseña: String,flag: Bool, completion: @escaping() -> Void)
     {
         let context = container.viewContext
-        let users = Users(context: context)
-        users.user = usuario
-        users.password = contraseña
-        users.flagFaceId = flag
+        let user = Users(context: context)
+        user.user = usuario
+        user.password = contraseña
+        user.flagFaceId = flag
         //save
         do{
             try context.save()
@@ -59,10 +58,6 @@ class coreDataManager{
                     print("coinciden")
                     flag = true
                 }
-                else{
-                    print("diferente")
-                    flag = false
-                }
             }
         }catch{
             print("No existe usuario")
@@ -82,10 +77,6 @@ class coreDataManager{
                     print("Usuario Existe")
                     flag = true
                 }
-                else{
-                    print("Usuario no existe")
-                    flag = false
-                }
             }
         }catch{
             print("No existe usuario")
@@ -93,13 +84,26 @@ class coreDataManager{
         return flag
     }
     
+    func updateFlag(user: String, flagFaceId: Bool)
+    {
+        let fetchRequest : NSFetchRequest<Users> = Users.fetchRequest()
+        do {
+            let result = try container.viewContext.fetch(fetchRequest)
+            result.forEach { (users) in
+                if user == users.user
+                {
+                    users.flagFaceId = flagFaceId
+                }
+            }
+            try container.viewContext.save()
+        }
+        catch
+        {
+            print("El error obteniendo usuario \(error)")
+        }
+    }
     
 }
-
-
-
-
-
 
 
 

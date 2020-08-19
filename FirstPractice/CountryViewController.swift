@@ -5,7 +5,6 @@
 //  Created by Miguel Eduardo  Valdez Tellez  on 23/07/20.
 //  Copyright © 2020 Miguel Eduardo  Valdez Tellez . All rights reserved.
 //
-
 import UIKit
 import SDWebImage
 class CountryViewController: UIViewController {
@@ -37,7 +36,6 @@ class CountryViewController: UIViewController {
 
     /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
