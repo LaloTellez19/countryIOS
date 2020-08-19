@@ -23,14 +23,12 @@ var flagSelect = "https://scoopak.com/wp-content/uploads/2013/06/free-hd-natural
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableViewMain: UITableView!
-    
-   
-    
     var countries: [Country] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         //metodos obligados
         tableViewMain.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "CountryCell")
         tableViewMain.delegate = self

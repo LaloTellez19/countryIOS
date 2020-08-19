@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QWY-wm-Og3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CREAR NUEVO USUARIO-->
+        <scene sceneID="xiJ-7c-95u">
+            <objects>
+                <viewController storyboardIdentifier="crear_usuario" id="KlG-tL-hdz" customClass="createAccountViewController" customModule="FirstPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MJo-Ik-bKW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Zv-YE-v56">
+                                <rect key="frame" x="50" y="138" width="314" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wdf-fT-nGK">
+                                <rect key="frame" x="50" y="241" width="314" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adh-s4-lTs">
+                                <rect key="frame" x="50" y="344" width="314" height="40"/>
+                                <color key="backgroundColor" red="0.23887869719999999" green="0.40355968479999998" blue="0.67913669350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Crear Cuenta">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnCreate:" destination="KlG-tL-hdz" eventType="touchUpInside" id="G9T-rF-NYt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VaN-nM-eLj" firstAttribute="trailing" secondItem="wdf-fT-nGK" secondAttribute="trailing" constant="50" id="7bJ-ED-y7y"/>
+                            <constraint firstItem="8Zv-YE-v56" firstAttribute="leading" secondItem="VaN-nM-eLj" secondAttribute="leading" constant="50" id="DXj-CS-dNQ"/>
+                            <constraint firstItem="adh-s4-lTs" firstAttribute="leading" secondItem="VaN-nM-eLj" secondAttribute="leading" constant="50" id="JvB-q0-e8D"/>
+                            <constraint firstItem="wdf-fT-nGK" firstAttribute="top" secondItem="8Zv-YE-v56" secondAttribute="bottom" constant="69" id="TyJ-Oe-wEz"/>
+                            <constraint firstItem="8Zv-YE-v56" firstAttribute="top" secondItem="VaN-nM-eLj" secondAttribute="top" constant="50" id="bOs-dC-xdm"/>
+                            <constraint firstItem="adh-s4-lTs" firstAttribute="top" secondItem="wdf-fT-nGK" secondAttribute="bottom" constant="69" id="dM9-FG-krx"/>
+                            <constraint firstItem="VaN-nM-eLj" firstAttribute="trailing" secondItem="8Zv-YE-v56" secondAttribute="trailing" constant="50" id="eMT-SN-5pJ"/>
+                            <constraint firstItem="wdf-fT-nGK" firstAttribute="leading" secondItem="VaN-nM-eLj" secondAttribute="leading" constant="50" id="hBN-PB-euk"/>
+                            <constraint firstItem="VaN-nM-eLj" firstAttribute="trailing" secondItem="adh-s4-lTs" secondAttribute="trailing" constant="50" id="rlY-yY-N2Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VaN-nM-eLj"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CREAR NUEVO USUARIO" id="a5I-cX-7MO"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="wdf-fT-nGK" id="waA-gd-MYV"/>
+                        <outlet property="userTextField" destination="8Zv-YE-v56" id="RrT-SO-hVR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ffv-M1-ZL2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="136"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PaI-dp-cLC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QWY-wm-Og3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Guu-iB-XXa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KlG-tL-hdz" kind="relationship" relationship="rootViewController" id="CEH-dG-3gD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tUp-39-kgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="135.9375"/>
+        </scene>
+    </scenes>
+</document>
