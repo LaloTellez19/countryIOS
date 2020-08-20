@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 struct Country: Codable {
     let name: String
@@ -21,6 +22,13 @@ var flagSelect = "https://scoopak.com/wp-content/uploads/2013/06/free-hd-natural
 
 
 class ViewController: UIViewController, countryServiceViewProtocol {
+    func returnCountry(paises: [Country]) {
+        self.countries = paises
+        DispatchQueue.main.async{
+            self.tableViewMain.reloadData()
+        }
+    }
+    
     var presenter: countryServicePresenterProtocol?
     @IBOutlet weak var tableViewMain: UITableView!
     var countries: [Country] = []
@@ -30,15 +38,7 @@ class ViewController: UIViewController, countryServiceViewProtocol {
         tableViewMain.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "CountryCell")
         tableViewMain.delegate = self
         tableViewMain.dataSource = self
-        //llamado a metodo
-        
-        
-        fetchService { [weak self] (countries) in
-            self?.countries = countries
-            DispatchQueue.main.async {
-                self?.tableViewMain.reloadData()
-            }
-        }
+        presenter?.regresarPaises()
         
     }
     
@@ -73,7 +73,6 @@ extension ViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell",
                                                  for: indexPath)
-        
         if let newCell = cell as? CountryCell {
             DispatchQueue.main.async {
                 let country = self.countries[indexPath.row]
@@ -83,31 +82,3 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 }
-
-
-//Consumo de servicios
-private func fetchService(completion: @escaping (_ countries: [Country]) -> Void) {
-    //paso 2
-    let endpointString = "https://restcountries.eu/rest/v2/region/americas"
-    guard let endpoint = URL(string: endpointString) else {
-        return
-    }
-    
-    //paso 3
-    URLSession.shared.dataTask(with: endpoint) { (data: Data?, _, error: Error?) in
-        if let error = error {
-            print("hubo un error: \(error.localizedDescription)")
-            return
-        }
-        //paso 4
-        guard let dataFromServices = data,
-            let response: [Country] = try? JSONDecoder().decode([Country].self, from: dataFromServices) else {
-                completion([])
-                return
-        }
-        completion(response)
-    }.resume()
-}
-
-
-
